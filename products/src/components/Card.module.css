@@ -1,0 +1,40 @@
+.card {
+    width: 240px;
+    padding: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background-color: rgb(230 225 236);
+  }
+  
+  .image {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 17px;
+  }
+  
+  .title {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
