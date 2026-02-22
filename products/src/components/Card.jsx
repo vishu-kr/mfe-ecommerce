@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux"
 import { addToCart } from "shared/cartSlice";
 
 function Card({ product }) {
-    console.log(product);
     const dispatch = useDispatch()
     return (
         <>
