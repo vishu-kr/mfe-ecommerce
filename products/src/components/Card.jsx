@@ -9,17 +9,17 @@ function Card({ product }) {
         <>
             <div className={styles.card}>
                 <img
-                    src={product.img}
+                    src={product.images[0]}
                     className={styles.image}
                 />
 
                 <h4 className={styles.title}>
-                    {product.productName}
+                    {product.title}
                 </h4>
 
                 <div className={styles.footer}>
                     <p className={styles.price}>
-                        ₹ {product.productPrice}
+                        ₹ {product.price}
                     </p>
                     <button className={styles.button} onClick={() => dispatch(addToCart(product))}>
                         Add to Cart

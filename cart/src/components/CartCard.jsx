@@ -8,8 +8,12 @@ function CartCard({ item }) {
                 borderRadius: '4px',
                 margin: '5px 0 5px 0'
             }}>
-                <img src={item.img} style={{ width: '50px', }} />
-                <h3 style={{ marginLeft: '30px' }}>{item.productName}</h3>
+                <img src={item.thumbnail} style={{ width: '50px', }} />
+                <div>
+                    <h3 style={{ marginLeft: '30px' }}>{item.title}</h3>
+                    <p style={{ marginLeft: '30px' }}>₹{item.price}</p>
+                </div>
+
             </div>
         </>
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const ProductList = React.lazy(() => import("products/ProductList"));
 const Cart = React.lazy(() => import("cart/Cart"));
@@ -36,7 +37,7 @@ function App() {
                         Product
                     </Link>
                     <Link to="/cart" className="nav-link" aria-label={`Open cart with ${items.length} items`}>
-                        Cart({items.length})
+                        <ShoppingCartIcon />({items.length})
                     </Link>
                 </nav>
             </header>

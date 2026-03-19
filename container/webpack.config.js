@@ -4,7 +4,10 @@ const { ModuleFederationPlugin } = require("webpack").container;
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
-  devServer: { port: 3000 },
+  devServer: {
+    port: 3000,
+    historyApiFallback: true
+  },
 
   resolve: {
     extensions: [".js", ".jsx"]
