@@ -8,6 +8,9 @@ module.exports = {
     port: 3000,
     historyApiFallback: true
   },
+  output: {
+    publicPath: "auto"
+  },
 
   resolve: {
     extensions: [".js", ".jsx"]
@@ -35,16 +38,16 @@ module.exports = {
       name: "container",
 
       remotes: {
-        products: "products@http://localhost:3001/remoteEntry.js",
-        cart: "cart@http://localhost:3002/remoteEntry.js",
-        shared: "shared@http://localhost:3003/remoteEntry.js"
+        products: "products@https://mfe-products-tawny.vercel.app/remoteEntry.js",
+        cart: "cart@https://mfe-cart-self.vercel.app/remoteEntry.js",
+        shared: "shared@https://mfe-shared.vercel.app/remoteEntry.js"
       },
 
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
-        "react-redux": { singleton: true },
-        "@reduxjs/toolkit": { singleton: true }
+        react: { singleton: true , requiredVersion: false},
+        "react-dom": { singleton: true , requiredVersion: false},
+        "react-redux": { singleton: true , requiredVersion: false},
+        "@reduxjs/toolkit": { singleton: true , requiredVersion: false}
       }
     }),
 
