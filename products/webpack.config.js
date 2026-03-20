@@ -51,7 +51,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "products",
       remotes: {
-        shared: "shared@https://mfe-shared.vercel.app/remoteEntry.js"
+        shared: "shared@https://shared-alpha-virid.vercel.app/remoteEntry.js"
       },
       filename: "remoteEntry.js",
       exposes: {
