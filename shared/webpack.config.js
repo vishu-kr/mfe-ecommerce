@@ -36,10 +36,10 @@ module.exports = {
         "./cartSlice": "./src/features/cart/cartSlice"
       },
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
-        "react-redux": { singleton: true },
-        "@reduxjs/toolkit": { singleton: true }
+        react: { singleton: true, requiredVersion: false },
+        "react-dom": { singleton: true, requiredVersion: false },
+        "react-redux": { singleton: true, requiredVersion: false },
+        "@reduxjs/toolkit": { singleton: true, requiredVersion: false }
       }
     })
   ]
