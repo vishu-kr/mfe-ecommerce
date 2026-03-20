@@ -39,7 +39,7 @@ module.exports = {
 
       remotes: {
         products: "products@https://products-theta-drab.vercel.app/remoteEntry.js",
-        cart: "cart@https://https://cart-zeta-three.vercel.app/remoteEntry.js",
+        cart: "cart@https://cart-zeta-three.vercel.app/remoteEntry.js",
         shared: "shared@https://shared-alpha-virid.vercel.app/remoteEntry.js"
       },
 
