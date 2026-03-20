@@ -30,17 +30,17 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "cart",
       remotes: {
-        shared: "shared@http://localhost:3003/remoteEntry.js"
+        shared: "shared@https://mfe-shared.vercel.app/remoteEntry.js"
       },
       filename: "remoteEntry.js",
       exposes: {
         "./Cart": "./src/Cart.jsx"
       },
       shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
-        "react-redux": { singleton: true },
-        "@reduxjs/toolkit": { singleton: true }
+        react: { singleton: true , requiredVersion:false},
+        "react-dom": { singleton: true , requiredVersion:false},
+        "react-redux": { singleton: true, requiredVersion:false },
+        "@reduxjs/toolkit": { singleton: true, requiredVersion:false }
       }
     }),
     new HtmlWebpackPlugin({
