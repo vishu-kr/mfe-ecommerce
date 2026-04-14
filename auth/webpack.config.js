@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/index.js",
   mode: "development",
   devServer: {
-    port: 3001,
+    port: 3004,
     headers: {
       "Access-Control-Allow-Origin": "*"
     }
@@ -49,19 +49,14 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "products",
-      remotes: {
-        shared: "shared@http://localhost:3003/remoteEntry.js"
-      },
+      name: "auth",
       filename: "remoteEntry.js",
       exposes: {
-        "./ProductList": "./src/ProductList.jsx"
+        "./Auth": "./src/Auth.jsx"
       },
       shared: {
         react: { singleton: true , requiredVersion: false},
         "react-dom": { singleton: true, requiredVersion: false },
-        "react-redux": { singleton: true, requiredVersion: false },
-        "@reduxjs/toolkit": { singleton: true, requiredVersion: false }
       }
     }),
     new HtmlWebpackPlugin({

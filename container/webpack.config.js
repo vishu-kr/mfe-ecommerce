@@ -1,6 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const dotenv = require("dotenv");
 
+const env = process.env.NODE_ENV === "production"
+  ? dotenv.config({ path: ".env.production" }).parsed
+  : dotenv.config({ path: ".env.development" }).parsed;
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
@@ -38,9 +42,10 @@ module.exports = {
       name: "container",
 
       remotes: {
-        products: "products@https://products-theta-drab.vercel.app/remoteEntry.js",
-        cart: "cart@https://cart-zeta-three.vercel.app/remoteEntry.js",
-        shared: "shared@https://shared-alpha-virid.vercel.app/remoteEntry.js"
+        products: `products@${env.PRODUCTS_URL}/remoteEntry.js`,
+        cart: `cart@${env.CART_URL}/remoteEntry.js`,
+        shared: `shared@${env.SHARED_URL}/remoteEntry.js`,
+        auth: `auth@${env.AUTH_URL}/remoteEntry.js`
       },
 
       shared: {

@@ -30,7 +30,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "cart",
       remotes: {
-        shared: "shared@https://shared-alpha-virid.vercel.app/remoteEntry.js"
+        shared: "shared@http://localhost:3003/remoteEntry.js"
       },
       filename: "remoteEntry.js",
       exposes: {
