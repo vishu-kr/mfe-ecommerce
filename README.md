@@ -11,3 +11,4 @@ Architecture:
 - Products (Remote)
 - Cart (Remote)
 - Shared (Redux Store)
+- Auth (Remote)
