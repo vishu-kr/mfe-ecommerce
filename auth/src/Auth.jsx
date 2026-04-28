@@ -1,11 +1,13 @@
-import React from "react"
+import React from "react";
+import styles from './Auth.module.css'
+
 function Auth() {
+
     return (
-        <>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ width: '500px', height: '400px', border: '1px solid grey' }}></div>
-            </div>
-        </>
-    )
+        <div className={styles.overlay}>
+            <div className={styles.modal}></div>
+        </div>
+    );
 }
-export default Auth
+
+export default Auth;
