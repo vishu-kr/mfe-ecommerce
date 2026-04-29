@@ -18,3 +18,19 @@
     border-radius: 12px;
     padding: 24px;
 }
+
+.header{
+    text-align: center;
+}
+
+.title{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.subtitle{
+    color: #666;
+    margin-top: 4px;
+    font-size: 14px;
+}
