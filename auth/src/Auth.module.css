@@ -34,3 +34,12 @@
     margin-top: 4px;
     font-size: 14px;
 }
+
+.button{
+    background-color: #1d84f8;
+    border-radius: 4px;
+    color: white;
+    width: 137px;
+    padding: 5px;
+    border: none
+}
