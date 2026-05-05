@@ -4,7 +4,7 @@ import styles from './Auth.module.css'
 function Auth() {
     const [mobile, setMobile] = useState("")
     const [step, setStep] = useState("mobile")
-    const [otp, setOtp] = useState("1234")
+    const [otp, setOtp] = useState("")
     const isEnable = mobile.length == 10
 
     return (
@@ -60,16 +60,35 @@ function Auth() {
                         :
                         <div>
                             <div style={{ textAlign: 'center' }}>Enter OTP sent to +91{mobile}</div>
-                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px' }}>
-                                {
-                                    otp.split('').map((ele, idx) => (
-                                        <div style={{
-                                            width: '32px', height: '32px', display: 'flex',
+                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', position: 'relative' }}>
+                                <input
+                                    type="tel"
+                                    maxLength={4}
+                                    value={otp}
+                                    onChange={(e) => {
+                                        const value = e.target.value.replace(/\D/g, "");
+                                        setOtp(value);
+                                    }}
+                                    style={{
+                                        opacity: 0,
+                                        position: 'absolute',
+                                    }}
+                                />
+                                {[0, 1, 2, 3].map((_, idx) => (
+                                    <div
+                                        key={idx}
+                                        style={{
+                                            width: '32px',
+                                            height: '32px',
+                                            border: '1px solid black',
+                                            display: 'flex',
                                             alignItems: 'center',
-                                            justifyContent: 'center', gap: '8px', border: '1px solid black'
-                                        }} key={idx}>{ele}</div>
-                                    ))
-                                }
+                                            justifyContent: 'center'
+                                        }}
+                                    >
+                                        {otp[idx] || ""}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                 }
