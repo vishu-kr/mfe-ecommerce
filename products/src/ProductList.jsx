@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react"
 import Card from "./components/Card.jsx"
+import LoaderCard from "./components/Loader.jsx";
+
 function ProductList() {
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -11,10 +14,19 @@ function ProductList() {
             }
             catch (e) {
                 console.log(e.value)
+            } finally {
+                setIsLoading(false)
             }
         }
         fetchData()
     }, [])
+
+    if (isLoading) {
+        return (
+            <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+                {new Array(25).fill(0).map((_, idx) => <LoaderCard key={idx} />)}
+            </div>)
+    }
 
     return (
         <>
@@ -26,4 +38,8 @@ function ProductList() {
         </>
     )
 }
+
+
+
+
 export default ProductList
